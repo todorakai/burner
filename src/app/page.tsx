@@ -1,0 +1,165 @@
+import Link from 'next/link';
+import { Flame, Target, Brain, Zap, CheckCircle, ArrowRight } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent } from '@/components/ui/card';
+
+export default function LandingPage() {
+  return (
+    <div className="min-h-screen bg-gradient-to-b from-background to-muted/20">
+      {/* Hero Section */}
+      <section className="container mx-auto px-4 py-20 text-center">
+        <div className="flex justify-center mb-6">
+          <div className="relative">
+            <Flame className="h-20 w-20 text-orange-500 animate-pulse" />
+            <div className="absolute inset-0 blur-xl bg-orange-500/30 animate-pulse" />
+          </div>
+        </div>
+
+        <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent">
+          Learn It or Lose It
+        </h1>
+
+        <p className="text-xl md:text-2xl text-muted-foreground mb-4 max-w-2xl mx-auto">
+          Put your money where your learning is. Stake real dollars on your commitment to learn.
+        </p>
+
+        <p className="text-lg text-muted-foreground mb-8 max-w-xl mx-auto">
+          Pass an AI-generated exam and save your stake. Fail or miss the deadline? Your money burns. 🔥
+        </p>
+
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <Link href="/auth/sign-up">
+            <Button size="lg" className="text-lg px-8 bg-orange-500 hover:bg-orange-600">
+              Start Learning
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Button>
+          </Link>
+          <Link href="/auth/sign-in">
+            <Button size="lg" variant="outline" className="text-lg px-8">
+              Sign In
+            </Button>
+          </Link>
+        </div>
+      </section>
+
+      {/* How It Works */}
+      <section className="container mx-auto px-4 py-20">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
+          How It Works
+        </h2>
+
+        <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          <Card className="border-2 hover:border-orange-500/50 transition-colors">
+            <CardContent className="pt-6">
+              <div className="rounded-full bg-orange-500/10 w-12 h-12 flex items-center justify-center mb-4">
+                <Target className="h-6 w-6 text-orange-500" />
+              </div>
+              <h3 className="text-xl font-bold mb-2">1. Make a Commitment</h3>
+              <p className="text-muted-foreground">
+                Choose a topic you want to learn and stake $1-$1000. Set your deadline (1-90 days).
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card className="border-2 hover:border-orange-500/50 transition-colors">
+            <CardContent className="pt-6">
+              <div className="rounded-full bg-orange-500/10 w-12 h-12 flex items-center justify-center mb-4">
+                <Brain className="h-6 w-6 text-orange-500" />
+              </div>
+              <h3 className="text-xl font-bold mb-2">2. Learn & Prepare</h3>
+              <p className="text-muted-foreground">
+                Study your topic. When ready, take an AI-generated exam tailored to your commitment.
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card className="border-2 hover:border-orange-500/50 transition-colors">
+            <CardContent className="pt-6">
+              <div className="rounded-full bg-orange-500/10 w-12 h-12 flex items-center justify-center mb-4">
+                <Zap className="h-6 w-6 text-orange-500" />
+              </div>
+              <h3 className="text-xl font-bold mb-2">3. Pass or Burn</h3>
+              <p className="text-muted-foreground">
+                Score 70%+ to save your stake. Fail or miss the deadline? Your money burns forever.
+              </p>
+            </CardContent>
+          </Card>
+        </div>
+      </section>
+
+      {/* Features */}
+      <section className="container mx-auto px-4 py-20 bg-muted/30">
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
+          Why Burner Works
+        </h2>
+
+        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <div className="flex gap-4">
+            <CheckCircle className="h-6 w-6 text-green-500 shrink-0 mt-1" />
+            <div>
+              <h3 className="font-bold mb-2">Real Stakes, Real Motivation</h3>
+              <p className="text-muted-foreground">
+                Loss aversion is powerful. When your money is on the line, you'll actually follow through.
+              </p>
+            </div>
+          </div>
+
+          <div className="flex gap-4">
+            <CheckCircle className="h-6 w-6 text-green-500 shrink-0 mt-1" />
+            <div>
+              <h3 className="font-bold mb-2">AI-Powered Exams</h3>
+              <p className="text-muted-foreground">
+                Get custom exams generated by advanced AI, tailored to your specific learning topic.
+              </p>
+            </div>
+          </div>
+
+          <div className="flex gap-4">
+            <CheckCircle className="h-6 w-6 text-green-500 shrink-0 mt-1" />
+            <div>
+              <h3 className="font-bold mb-2">One Retry Chance</h3>
+              <p className="text-muted-foreground">
+                Failed the first time? You get one retry. Use it wisely - it's your last chance.
+              </p>
+            </div>
+          </div>
+
+          <div className="flex gap-4">
+            <CheckCircle className="h-6 w-6 text-green-500 shrink-0 mt-1" />
+            <div>
+              <h3 className="font-bold mb-2">Track Your Progress</h3>
+              <p className="text-muted-foreground">
+                See your stakes saved, burned, and at risk. Watch the countdown timer tick down.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="container mx-auto px-4 py-20 text-center">
+        <div className="max-w-2xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            Ready to Commit?
+          </h2>
+          <p className="text-xl text-muted-foreground mb-8">
+            Stop procrastinating. Start learning. Put your money where your mouth is.
+          </p>
+          <Link href="/auth/sign-up">
+            <Button size="lg" className="text-lg px-8 bg-orange-500 hover:bg-orange-600">
+              Create Your First Commitment
+              <Flame className="ml-2 h-5 w-5" />
+            </Button>
+          </Link>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="border-t py-8">
+        <div className="container mx-auto px-4 text-center text-muted-foreground">
+          <p>© 2026 Burner. Learn it or lose it.</p>
+        </div>
+      </footer>
+    </div>
+  );
+}
