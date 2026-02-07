@@ -27,7 +27,7 @@ const GRADER_RETRY_CONFIG = {
  * Cerebras model configuration for grading
  */
 const GRADER_CEREBRAS_CONFIG = {
-    model: 'qwen-3-235b-a22b-instruct-2507',
+    model: 'zai-glm-4.7',
     maxCompletionTokens: 65536,
     temperature: 0.6,
     topP: 0.95,
